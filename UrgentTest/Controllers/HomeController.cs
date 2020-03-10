@@ -11,13 +11,16 @@ namespace UrgentTest.Controllers
     public class HomeController : Controller
     {
         private IBillMatRepository repository;
-        public HomeController(IBillMatRepository repo)
+        private IErrorRepository errorRepository;
+        public HomeController(IBillMatRepository repo, IErrorRepository errorRepo)
         {
             repository = repo;
+            errorRepository = errorRepo;
         }
 
         public IActionResult Index()
         {
+            
             return View();
         }
         
@@ -25,14 +28,30 @@ namespace UrgentTest.Controllers
         public ViewResult Submit(ShapesViewModel shapes)
         {
             BillofMaterial billofMaterial = new BillofMaterial();
-            if (ModelState.IsValid)
-            {
-                billofMaterial = repository.GenerateBill(shapes);
+            try
+            {                
+                if (ModelState.IsValid)
+                {
+                    try
+                    {
+                        billofMaterial = repository.GenerateBill(shapes);
+                    }
+                    catch (Exception ex)
+                    {
+                        errorRepository.LogError(ex);
+                        billofMaterial = repository.ThrowAbort();
+                    }
+                }
+                else
+                {
+                    billofMaterial = repository.ThrowAbort();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                billofMaterial = repository.ThrowAbort();
+                errorRepository.LogError(ex);
             }
+            
 
             return View(billofMaterial);
         }

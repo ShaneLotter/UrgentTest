@@ -10,6 +10,7 @@ namespace UrgentTest.Models
     {
         public BillofMaterial GenerateBill(ShapesViewModel shapes)
         {
+            
             BillofMaterial billofMaterial = new BillofMaterial();
             List<string> materials = new List<string>();
             string rectangle = "";
@@ -32,6 +33,8 @@ namespace UrgentTest.Models
             textbox = "Textbox (" + shapes.Textboxes.PositionX.ToString() + "," + shapes.Textboxes.PositionY.ToString() + ") width=" + shapes.Textboxes.Width.ToString() + " height=" + shapes.Textboxes.Height.ToString() + " text=\"" + shapes.Textboxes.Text.ToString() + "\"";
             materials.Add(textbox);
             billofMaterial.Materials = materials;
+
+            throw new System.ArgumentException("Parameter cannot be null", "original");
 
             return billofMaterial;
         }

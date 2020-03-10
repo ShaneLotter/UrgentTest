@@ -17,6 +17,7 @@ namespace UrgentTest
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IBillMatRepository, BillMatRepository>();
+            services.AddTransient<IErrorRepository, ErrorRepository>();
             services.AddMvc();
         }
 
