@@ -1,0 +1,88 @@
+﻿@model ShapesViewModel
+
+    <form asp-action="Submit" method="post">
+        <h2>Rectangle</h2>
+        <div class="form-group">
+            <label asp-for="Rectangles.PositionX"></label>:
+            <input asp-for="Rectangles.PositionX" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Rectangles.PositionY"></label>:
+            <input asp-for="Rectangles.PositionY" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Rectangles.Width"></label>:
+            <input asp-for="Rectangles.Width" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Rectangles.Height"></label>:
+            <input asp-for="Rectangles.Height" class="form-control" />
+        </div>
+        <h2>Square</h2>
+        <div class="form-group">
+            <label asp-for="Squares.PositionX"></label>:
+            <input asp-for="Squares.PositionX" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Squares.PositionY"></label>:
+            <input asp-for="Squares.PositionY" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Squares.Width"></label>:
+            <input asp-for="Squares.Width" class="form-control" />
+        </div>
+        <h2>Ellipse</h2>
+        <div class="form-group">
+            <label asp-for="Ellipses.PositionX"></label>:
+            <input asp-for="Ellipses.PositionX" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Ellipses.PositionY"></label>:
+            <input asp-for="Ellipses.PositionY" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Ellipses.HorizontalDiameter"></label>:
+            <input asp-for="Ellipses.HorizontalDiameter" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Ellipses.VerticalDiameter"></label>:
+            <input asp-for="Ellipses.VerticalDiameter" class="form-control" />
+        </div>
+        <h2>Circle</h2>
+        <div class="form-group">
+            <label asp-for="Circles.PositionX"></label>:
+            <input asp-for="Circles.PositionX" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Circles.PositionY"></label>:
+            <input asp-for="Circles.PositionY" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Circles.Diameter"></label>:
+            <input asp-for="Circles.Diameter" class="form-control" />
+        </div>
+        <h2>Textbox</h2>
+        <div class="form-group">
+            <label asp-for="Textboxes.PositionX"></label>:
+            <input asp-for="Textboxes.PositionX" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Textboxes.PositionY"></label>:
+            <input asp-for="Textboxes.PositionY" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Textboxes.Width"></label>:
+            <input asp-for="Textboxes.Width" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Textboxes.Height"></label>:
+            <input asp-for="Textboxes.Height" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Textboxes.Text"></label>:
+            <input asp-for="Textboxes.Text" class="form-control" />
+        </div>
+        <div class="container-fluid">
+            <button type="submit">Submit</button>
+        </div>
+    </form>

@@ -1,0 +1,24 @@
+﻿@model BillofMaterial
+    <div class="container-fluid">
+
+        @if (Model.Materials.Count > 1)
+        {
+            <label>----------------------------------------------------------------</label><br />
+            <label>Bill of Materials</label><br />
+            <label>----------------------------------------------------------------</label><br />
+            @foreach (string str in Model.Materials)
+            {
+                <label>@str</label><br />
+            }
+            <label>----------------------------------------------------------------</label>
+        }
+        else
+        {
+            @foreach (string str in Model.Materials)
+            {
+                <label>@str</label><br />
+            }
+        }
+
+    </div>
+
